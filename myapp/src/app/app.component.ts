@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
-import { MyDataService } from './myDataService';
-import { ConversionCtoF } from './conversionCtoF';
 @Component({
-selector: 'app-root',
-template: `<h1>Hello world! {{title}}</h1>
-<ul>{{"Name: " + myname +"      Temp:" + f}}</ul>`,
-// 'providers' allows you to create and pass an instance
-// of the class to the constructor header.
-providers: [MyDataService, ConversionCtoF]
+ selector: 'app-root',
+ template: `<!-- Sep 17, 2019 -->
+ {{ mydate | date }}<br>
+ <!-- Sep 17, 2019 -->
+ <p>{{ mydate | date: 'y MMMM d' }}<br>
+ <!-- Sep 17, 2019 -->
+ <p>{{ mydate | date: 'mediumDate' }}<br>
+ <!-- Tuesday, Sep 17, 2019 -->
+ <p>{{ mydate | date: 'fullDate' }}<br>
+ <!-- 6:00 PM -->
+ <p>{{ mydate | date: 'shortTime' }}<br>
+ <!-- TUESDAY, Sep 17, 2019 -->
+ <p>{{ mydate | date:'fullDate' | uppercase}}</p>
+ <!-- Sep 17, 2019 6:00PM -->
+ <p>{{ mydate | date:'MMMM d, y h:mma' }}</p>
+ `
 })
 export class AppComponent {
-public title = 'This is Angular!';
-f: number;
-myname: string;
-
-
-// Create instance of 'MyDataService' right in the constructor
-// header.
-constructor(myDataService: MyDataService, conversionCtoF: ConversionCtoF) {
-// Use service to call getNames() method.
-this.myname = myDataService.getmyNames();
-this.f = conversionCtoF.getConversion();
-}
+ // Months start counting at 0.
+ mydate = new Date(2019, 8, 17, 18, 0, 30);
 }
