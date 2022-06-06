@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 // This is the service.
 export class MyDataService {
-names: Array<any>;
+myname: string;
 constructor() {
-this.names = ['Kenneth', 'Deborah', 'Maximilian'];
+this.myname = 'Max';
 }
-getNames() {
-return this.names;
+getmyNames() {
+return this.myname;
 }
 }
