@@ -1,23 +1,12 @@
 import { Component } from '@angular/core';
 @Component({
  selector: 'app-root',
- template: `<!-- Sep 17, 2019 -->
- {{ mydate | date }}<br>
- <!-- Sep 17, 2019 -->
- <p>{{ mydate | date: 'y MMMM d' }}<br>
- <!-- Sep 17, 2019 -->
- <p>{{ mydate | date: 'mediumDate' }}<br>
- <!-- Tuesday, Sep 17, 2019 -->
- <p>{{ mydate | date: 'fullDate' }}<br>
- <!-- 6:00 PM -->
- <p>{{ mydate | date: 'shortTime' }}<br>
- <!-- TUESDAY, Sep 17, 2019 -->
- <p>{{ mydate | date:'fullDate' | uppercase}}</p>
- <!-- Sep 17, 2019 6:00PM -->
- <p>{{ mydate | date:'MMMM d, y h:mma' }}</p>
- `
+ template:
+ `<h1>This is the header</h1>
+ <nav>
+ <a routerLink="/page-b/5/bob" routerLinkActive="active">B</a>
+ </nav>
+ <!-- Where router should display a view -->
+ <router-outlet></router-outlet>`
 })
-export class AppComponent {
- // Months start counting at 0.
- mydate = new Date(2019, 8, 17, 18, 0, 30);
-}
+export class AppComponent { }
